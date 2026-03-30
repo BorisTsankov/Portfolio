@@ -27,41 +27,12 @@ function Home() {
               <strong> AI, Machine Learning, Data,</strong> and scalable web applications.
             </p>
 
-            <div className="hero-actions">
-              <a href="#projects" className="btn btn-primary">
-                View Projects
-              </a>
-              <a href="mailto:tsankov.b@gmail.com" className="btn btn-secondary">
-                Email Me
-              </a>
-            </div>
-
-            <div className="hero-links">
-              <a href="mailto:tsankov.b@gmail.com">Email</a>
-              <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noreferrer">
-                LinkedIn
-              </a>
-              <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href="/cv.pdf" target="_blank" rel="noreferrer">
-                CV
-              </a>
-            </div>
+        
           </div>
 
           <div className="hero-media">
             <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
           </div>
-        </section>
-
-        <section className="info-strip">
-          {stats.map((stat) => (
-            <div key={stat.label} className="info-strip-item">
-              <span className="info-strip-value">{stat.value}</span>
-              <span className="info-strip-label">{stat.label}</span>
-            </div>
-          ))}
         </section>
 
         <section className="projects-section" id="projects">
