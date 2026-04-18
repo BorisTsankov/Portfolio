@@ -8,7 +8,7 @@ export const liveProjects: Project[] = [
       'A personal project focused on calorie tracking, barcode/manual food logging, and AI-assisted interaction.',
     stack: ['.NET', 'MSSQL', 'HTML', 'CSS', 'JavaScript'],
     link: 'https://i547859.luna.fhict.nl',
-    live: true,
+    github: 'https://github.com/BorisTsankov/MealPulse'
   },
   {
     title: 'HousingHelper',
@@ -17,7 +17,8 @@ export const liveProjects: Project[] = [
       'A housing web app with listing aggregation, smart search criteria, email alerts, and map-based browsing.',
     stack: ['React', 'TypeScript', 'Spring Boot', 'PostgreSQL'],
     link: 'https://housinghelper-ip.com',
-    live: true,
+    github: 'https://github.com/BorisTsankov/HousingHelper'
+
   },
 ]
 

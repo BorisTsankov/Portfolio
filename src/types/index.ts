@@ -9,7 +9,8 @@ export type Project = {
   description: string
   stack: string[]
   link?: string
-  live?: boolean
+  github?: string
+  demo?: string
 }
 
 export type SkillGroup = {

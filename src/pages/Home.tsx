@@ -1,118 +1,195 @@
 import { stats } from '../data/stats'
 import { liveProjects, featuredProjects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
+import Navbar from '../components/Navbar'
+import SectionReveal from '../components/SectionReveal'
+import StackSection from '../components/StackSection'
+import TimelineSection from '../components/TimelineSection'
 import profilePic from '../assets/ProfilePic.JPG'
 
 const allProjects = [...liveProjects, ...featuredProjects]
 
 function Home() {
   return (
-    <main className="portfolio">
-      <div className="page-shell">
-        <section className="hero-section">
-          <div className="hero-copy">
-            <p className="eyebrow">Full-Stack Developer · Machine Learning Engineer</p>
+    <>
+      <Navbar />
 
-            <h1 className="hero-title">
-              Hi, I’m <span>Boris Tsankov</span>.
-            </h1>
+      <main className="portfolio" id="top">
+        <div className="page-shell">
+          <section className="hero-section">
+            <div className="hero-copy">
+  <p className="eyebrow">Full-Stack Developer · Machine Learning Engineer</p>
 
-            <p className="hero-text">
-              I build full-stack applications that are practical, structured well,
-              and ready to run in real environments.
-            </p>
+  <h1 className="hero-title">
+    Building software that feels <span>serious, usable, and real</span>.
+  </h1>
 
-            <p className="hero-subtext">
-              Software Engineering student at Fontys ICT, currently focused on
-              <strong> AI, Machine Learning, Data,</strong> and scalable web applications.
-            </p>
+  <p className="hero-text hero-text-compact">
+    Software Engineering student at Fontys ICT building full-stack applications
+    with a growing focus on AI, machine learning, cloud, and real deployment.
+  </p>
 
-        
-          </div>
+  <div className="hero-highlights">
+    <span>React & TypeScript</span>
+    <span>ASP.NET & C#</span>
+    <span>AI / ML Focus</span>
+    <span>Cloud & CI/CD</span>
+  </div>
 
-          <div className="hero-media">
-            <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
-          </div>
-        </section>
+  <div className="hero-actions">
+    <a href="#projects" className="btn btn-primary">
+      Explore Projects
+    </a>
+    <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+      Download CV
+    </a>
+  </div>
 
-        <section className="projects-section" id="projects">
-          <div className="section-heading projects-heading">
-            <p className="section-label">Projects</p>
-            <h2>Selected work</h2>
-            <p>
-              A focused view of projects that show how I build, deploy, and think through
-              real software.
-            </p>
-          </div>
+  <div className="hero-links">
+    <a href="mailto:tsankov.b@gmail.com">Email</a>
+    <a
+      href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+      target="_blank"
+      rel="noreferrer"
+    >
+      LinkedIn
+    </a>
+    <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
+      GitHub
+    </a>
+  </div>
+</div>
 
-          <div className="projects-scroll">
-            {allProjects.map((project) => (
-              <div key={project.title} className="project-slide">
-                <ProjectCard project={project} />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="about-section">
-          <div className="section-heading">
-            <p className="section-label">About</p>
-            <h2>What I care about when building</h2>
-          </div>
-
-          <div className="about-grid">
-            <div className="about-text">
-              <p>
-                I like projects that feel complete. Not just code that works once, but systems
-                with cleaner structure, solid UX, practical features, and deployment in mind.
-              </p>
-              <p>
-                My strongest interest is in combining software engineering with AI and data,
-                especially when the result solves a real user problem instead of just being a demo.
-              </p>
-            </div>
-
-            <div className="about-points">
-              <div className="about-point">
-                <h3>Clean architecture</h3>
-                <p>Separation of concerns, maintainable code, and clear structure.</p>
-              </div>
-              <div className="about-point">
-                <h3>Real deployment</h3>
-                <p>Projects should be usable, testable, and actually running.</p>
-              </div>
-              <div className="about-point">
-                <h3>Practical problem solving</h3>
-                <p>Strong focus on useful features and realistic implementation.</p>
+            <div className="hero-media">
+              <div className="hero-image-shell">
+                <div className="hero-image-ring" />
+                <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        <section className="contact-section">
-          <div className="section-heading">
-            <p className="section-label">Contact</p>
-            <h2>Let’s work together</h2>
-            <p>
-              Open to internships, junior roles, and interesting software or AI-related work.
-            </p>
-          </div>
+          <SectionReveal>
+            <section className="stats-section">
+              <div className="info-strip">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="info-strip-item">
+                    <span className="info-strip-value">{stat.value}</span>
+                    <span className="info-strip-label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </SectionReveal>
 
-          <div className="contact-links contact-links-large">
-            <a href="mailto:tsankov.b@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a href="/cv.pdf" target="_blank" rel="noreferrer">
-              CV
-            </a>
-          </div>
-        </section>
-      </div>
-    </main>
+          <SectionReveal>
+            <section className="projects-section" id="projects">
+              <div className="section-heading projects-heading">
+                <p className="section-label">Projects</p>
+                <h2>Selected work</h2>
+                <p>
+                  A focused set of projects that show how I build, structure, and deploy real
+                  software across web, cloud, and AI-related work.
+                </p>
+              </div>
+
+              <div className="projects-grid">
+                {allProjects.map((project, index) => (
+                  <ProjectCard key={project.title} project={project} index={index + 1} />
+                ))}
+              </div>
+            </section>
+          </SectionReveal>
+
+          <SectionReveal>
+            <StackSection />
+          </SectionReveal>
+
+          <SectionReveal>
+            <TimelineSection />
+          </SectionReveal>
+
+          <SectionReveal>
+            <section className="about-section" id="about">
+              <div className="section-heading">
+                <p className="section-label">About</p>
+                <h2>What matters to me when building</h2>
+              </div>
+
+              <div className="about-grid">
+                <div className="about-panel about-text">
+                  <p>
+                    I like software that feels complete. Not just code that technically works,
+                    but systems with strong structure, better UX, realistic features, and
+                    deployment in mind from the start.
+                  </p>
+                  <p>
+                    My main interest is combining software engineering with AI and data in a way
+                    that solves actual user problems, not just creates a flashy demo.
+                  </p>
+                </div>
+
+                <div className="about-points">
+                  <div className="about-point about-panel">
+                    <h3>Clean architecture</h3>
+                    <p>Maintainable code, strong separation of concerns, and scalable structure.</p>
+                  </div>
+
+                  <div className="about-point about-panel">
+                    <h3>Real deployment</h3>
+                    <p>Projects should be usable, testable, and actually running in real environments.</p>
+                  </div>
+
+                  <div className="about-point about-panel">
+                    <h3>Practical problem solving</h3>
+                    <p>Useful features, realistic decisions, and solutions that make sense.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </SectionReveal>
+
+          <SectionReveal>
+            <section className="contact-section" id="contact">
+              <div className="section-heading">
+                <p className="section-label">Contact</p>
+                <h2>Let’s build something good</h2>
+                <p>
+                  I’m open to internships, junior opportunities, and software or AI-related work
+                  where I can contribute and keep growing.
+                </p>
+              </div>
+
+              <div className="contact-card">
+                <p className="contact-lead">
+                  Have an opportunity, collaboration, or role that fits? Reach out and let’s talk.
+                </p>
+
+                <div className="contact-links contact-links-large">
+                  <a href="mailto:tsankov.b@gmail.com">Email</a>
+                  <a
+                    href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    LinkedIn
+                  </a>
+                  <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
+                    GitHub
+                  </a>
+                  <a href="/cv.pdf" target="_blank" rel="noreferrer">
+                    CV
+                  </a>
+                </div>
+              </div>
+            </section>
+          </SectionReveal>
+
+          <footer className="site-footer">
+            <p>© 2026 Boris Tsankov. Built with React and TypeScript.</p>
+          </footer>
+        </div>
+      </main>
+    </>
   )
 }
 
