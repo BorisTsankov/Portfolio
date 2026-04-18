@@ -16,43 +16,49 @@ function Home() {
 
       <main className="portfolio" id="top">
         <div className="page-shell">
-<section className="hero-section">
-  <div className="hero-copy">
-    <p className="eyebrow">Full-Stack Developer · Machine Learning Engineer</p>
+          <section className="hero-section">
+            <div className="hero-copy">
+              <p className="eyebrow">Full-Stack Developer · AI / ML Engineer</p>
 
-    <h1 className="hero-title">
-      Building software that feels <span>usable and real</span>.
-    </h1>
+              <h1 className="hero-title">
+                Clean systems. <span>Real software.</span>
+              </h1>
 
-    <p className="hero-text hero-text-compact">
-      Software Engineering student at Fontys ICT focused on full-stack development,
-      AI, cloud, and practical deployment.
-    </p>
+              <p className="hero-text hero-text-compact">
+                Software Engineering student at Fontys ICT focused on full-stack development,
+                AI, cloud, and practical deployment with strong attention to structure,
+                usability, and maintainability.
+              </p>
 
-    <div className="hero-highlights">
-      <span>React & TypeScript</span>
-      <span>ASP.NET & C#</span>
-      <span>AI / ML</span>
-      <span>Azure · AWS · CI/CD</span>
-    </div>
+              <div className="hero-status">
+                <span className="status-dot" />
+                Available for internships / junior roles
+              </div>
 
-    <div className="hero-actions">
-      <a href="#projects" className="btn btn-primary">
-        Explore Projects
-      </a>
-      <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-        Download CV
-      </a>
-    </div>
-  </div>
+              <div className="hero-highlights">
+                <span>React / TypeScript</span>
+                <span>ASP.NET / C#</span>
+                <span>AI / ML</span>
+                <span>Azure / AWS / CI-CD</span>
+              </div>
 
-  <div className="hero-media">
-    <div className="hero-image-shell">
-      <div className="hero-image-ring" />
-      <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
-    </div>
-  </div>
-</section>
+              <div className="hero-actions">
+                <a href="#projects" className="btn btn-primary">
+                  View Projects
+                </a>
+                <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+                  Download CV
+                </a>
+              </div>
+            </div>
+
+            <div className="hero-media">
+              <div className="hero-image-shell">
+                <div className="hero-image-ring" />
+                <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
+              </div>
+            </div>
+          </section>
 
           <SectionReveal>
             <section className="stats-section">
@@ -73,8 +79,8 @@ function Home() {
                 <p className="section-label">Projects</p>
                 <h2>Selected work</h2>
                 <p>
-                  A focused set of projects that show how I build, structure, and deploy real
-                  software across web, cloud, and AI-related work.
+                  Projects that reflect how I design, build, and ship software across web
+                  development, cloud infrastructure, and AI-related systems.
                 </p>
               </div>
 
@@ -104,25 +110,30 @@ function Home() {
               <div className="about-grid">
                 <div className="about-panel about-text">
                   <p>
-                    I like software that feels complete. Not just code that technically works,
-                    but systems with strong structure, better UX, realistic features, and
-                    deployment in mind from the start.
+                    I care about software that feels complete. Not just code that runs, but
+                    systems with solid structure, thoughtful UX, and realistic deployment.
                   </p>
                   <p>
-                    My main interest is combining software engineering with AI and data in a way
-                    that solves actual user problems, not just creates a flashy demo.
+                    My main interest is combining software engineering with AI and data to solve
+                    actual problems in a practical way, instead of building features that only
+                    look impressive in a demo.
                   </p>
                 </div>
 
                 <div className="about-points">
                   <div className="about-point about-panel">
                     <h3>Clean architecture</h3>
-                    <p>Maintainable code, strong separation of concerns, and scalable structure.</p>
+                    <p>
+                      Maintainable code, strong separation of concerns, and scalable structure.
+                    </p>
                   </div>
 
                   <div className="about-point about-panel">
                     <h3>Real deployment</h3>
-                    <p>Projects should be usable, testable, and actually running in real environments.</p>
+                    <p>
+                      Projects should be usable, testable, and actually running in real
+                      environments.
+                    </p>
                   </div>
 
                   <div className="about-point about-panel">

@@ -3,7 +3,7 @@ function Navbar() {
     <header className="site-header">
       <div className="site-header-inner">
         <a href="#top" className="site-logo">
-          Boris<span>.</span>
+          Boris TS<span>.</span>
         </a>
 
         <nav className="site-nav">
