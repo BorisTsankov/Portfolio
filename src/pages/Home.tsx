@@ -16,57 +16,43 @@ function Home() {
 
       <main className="portfolio" id="top">
         <div className="page-shell">
-          <section className="hero-section">
-            <div className="hero-copy">
-  <p className="eyebrow">Full-Stack Developer · Machine Learning Engineer</p>
+<section className="hero-section">
+  <div className="hero-copy">
+    <p className="eyebrow">Full-Stack Developer · Machine Learning Engineer</p>
 
-  <h1 className="hero-title">
-    Building software that feels <span>serious, usable, and real</span>.
-  </h1>
+    <h1 className="hero-title">
+      Building software that feels <span>usable and real</span>.
+    </h1>
 
-  <p className="hero-text hero-text-compact">
-    Software Engineering student at Fontys ICT building full-stack applications
-    with a growing focus on AI, machine learning, cloud, and real deployment.
-  </p>
+    <p className="hero-text hero-text-compact">
+      Software Engineering student at Fontys ICT focused on full-stack development,
+      AI, cloud, and practical deployment.
+    </p>
 
-  <div className="hero-highlights">
-    <span>React & TypeScript</span>
-    <span>ASP.NET & C#</span>
-    <span>AI / ML Focus</span>
-    <span>Cloud & CI/CD</span>
+    <div className="hero-highlights">
+      <span>React & TypeScript</span>
+      <span>ASP.NET & C#</span>
+      <span>AI / ML</span>
+      <span>Azure · AWS · CI/CD</span>
+    </div>
+
+    <div className="hero-actions">
+      <a href="#projects" className="btn btn-primary">
+        Explore Projects
+      </a>
+      <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+        Download CV
+      </a>
+    </div>
   </div>
 
-  <div className="hero-actions">
-    <a href="#projects" className="btn btn-primary">
-      Explore Projects
-    </a>
-    <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-      Download CV
-    </a>
+  <div className="hero-media">
+    <div className="hero-image-shell">
+      <div className="hero-image-ring" />
+      <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
+    </div>
   </div>
-
-  <div className="hero-links">
-    <a href="mailto:tsankov.b@gmail.com">Email</a>
-    <a
-      href="https://www.linkedin.com/in/YOUR-LINKEDIN"
-      target="_blank"
-      rel="noreferrer"
-    >
-      LinkedIn
-    </a>
-    <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
-      GitHub
-    </a>
-  </div>
-</div>
-
-            <div className="hero-media">
-              <div className="hero-image-shell">
-                <div className="hero-image-ring" />
-                <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
-              </div>
-            </div>
-          </section>
+</section>
 
           <SectionReveal>
             <section className="stats-section">
