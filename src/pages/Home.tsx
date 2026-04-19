@@ -6,6 +6,7 @@ import SectionReveal from '../components/SectionReveal'
 import StackSection from '../components/StackSection'
 import TimelineSection from '../components/TimelineSection'
 import profilePic from '../assets/ProfilePic.JPG'
+import LeadershipSection from '../components/LeadershipSection'
 
 const allProjects = [...liveProjects, ...featuredProjects]
 
@@ -99,6 +100,10 @@ function Home() {
 
           <SectionReveal>
             <TimelineSection />
+          </SectionReveal>
+
+          <SectionReveal>
+            <LeadershipSection />
           </SectionReveal>
 
           <SectionReveal>

@@ -920,3 +920,77 @@ img {
     gap: 16px;
   }
 }
+
+.leadership-section {
+  padding-top: 96px;
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.leadership-card {
+  position: relative;
+  padding: 26px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+  box-shadow: var(--shadow-md);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.leadership-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.leadership-card:hover {
+  transform: translate(-4px, -4px);
+  border-color: var(--border-strong);
+  box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.06);
+}
+
+.leadership-period {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-family: var(--font-pixel);
+}
+
+.leadership-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.leadership-role {
+  margin: 0 0 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.leadership-description {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.8;
+  font-size: 1rem;
+}
+@media (max-width: 1100px) {
+  .hero-section,
+  .projects-grid,
+  .stack-groups,
+  .about-grid,
+  .leadership-grid {
+    grid-template-columns: 1fr;
+  }
+}
