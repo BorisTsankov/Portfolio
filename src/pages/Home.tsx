@@ -17,50 +17,60 @@ function Home() {
 
       <main className="portfolio" id="top">
         <div className="page-shell">
-          <section className="hero-section">
-            <div className="hero-copy">
-              <p className="eyebrow">Full-Stack Developer · AI / ML Engineer</p>
+         <section className="hero-section">
+  <div className="hero-top">
+    <p className="eyebrow">Software Engineering Student · Full-Stack Developer · AI / ML Focus</p>
 
-              <h1 className="hero-title">
-                Clean systems. <span>Real software.</span>
-              </h1>
+    <h1 className="hero-title hero-title-centered">
+      Clean systems. <span>Real software.</span>
+    </h1>
+  </div>
 
-              <p className="hero-text hero-text-compact">
-                Software Engineering student at Fontys ICT focused on full-stack development,
-                AI, cloud, and practical deployment with strong attention to structure,
-                usability, and maintainability.
-              </p>
+  <div className="hero-main">
+    <div className="hero-copy">
+      <div className="hero-meta">
+        <span>Fontys ICT · Semester 4</span>
+        <span>Looking for internship</span>
+        <span>Proxy board member</span>
+      </div>
 
-              <div className="hero-status">
-                <span className="status-dot" />
-                Available for internships / junior roles
-              </div>
+      <p className="hero-text hero-text-compact">
+        I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on full-stack
+        development, AI, cloud, and practical deployment. I build software with strong structure,
+        realistic implementation, and long-term maintainability in mind.
+      </p>
 
-              <div className="hero-highlights">
-                <span>React / TypeScript</span>
-                <span>ASP.NET / C#</span>
-                <span>Spring Boot / Java</span>
-                <span>AI / ML</span>
-                <span>Azure / AWS / CI-CD</span>
-              </div>
+      <div className="hero-status">
+        <span className="status-dot" />
+        Available for internships / junior roles
+      </div>
 
-              <div className="hero-actions">
-                <a href="#projects" className="btn btn-primary">
-                  View Projects
-                </a>
-                <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-                  Download CV
-                </a>
-              </div>
-            </div>
+      <div className="hero-highlights">
+        <span>React / TypeScript</span>
+        <span>ASP.NET / C#</span>
+        <span>Spring Boot / Java</span>
+        <span>AI / ML</span>
+        <span>Azure / AWS / CI-CD</span>
+      </div>
 
-            <div className="hero-media">
-              <div className="hero-image-shell">
-                <div className="hero-image-ring" />
-                <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
-              </div>
-            </div>
-          </section>
+      <div className="hero-actions">
+        <a href="#projects" className="btn btn-primary">
+          View Projects
+        </a>
+        <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <div className="hero-media">
+      <div className="hero-image-shell">
+        <div className="hero-image-ring" />
+        <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
+      </div>
+    </div>
+  </div>
+</section>
 
           <SectionReveal>
             <section className="stats-section">
@@ -107,49 +117,59 @@ function Home() {
           </SectionReveal>
 
           <SectionReveal>
-            <section className="about-section" id="about">
-              <div className="section-heading">
-                <p className="section-label">About</p>
-                <h2>What matters to me when building</h2>
-              </div>
+  <section className="about-section" id="about">
+    <div className="section-heading">
+      <p className="section-label">About</p>
+      <h2>How I approach software</h2>
+    </div>
 
-              <div className="about-grid">
-                <div className="about-panel about-text">
-                  <p>
-                    I care about software that feels complete. Not just code that runs, but
-                    systems with solid structure, thoughtful UX, and realistic deployment.
-                  </p>
-                  <p>
-                    My main interest is combining software engineering with AI and data to solve
-                    actual problems in a practical way, instead of building features that only
-                    look impressive in a demo.
-                  </p>
-                </div>
+    <div className="about-grid">
+      <div className="about-panel about-text">
+        <p>
+          I’m a Software Engineering student at Fontys who enjoys building systems that feel real,
+          complete, and useful. What interests me most is the combination of full-stack
+          development, AI, and practical deployment.
+        </p>
+        <p>
+          I like software that is not just functional, but also structured well, easy to use, and
+          built with realistic decisions in mind. I care about maintainability, clarity, and making
+          things work properly outside of a demo environment.
+        </p>
+        <p>
+          Right now, I’m especially interested in growing further in software engineering, AI, and
+          data-driven systems through projects, collaboration, and an internship where I can keep
+          learning in a real professional setting.
+        </p>
+      </div>
 
-                <div className="about-points">
-                  <div className="about-point about-panel">
-                    <h3>Clean architecture</h3>
-                    <p>
-                      Maintainable code, strong separation of concerns, and scalable structure.
-                    </p>
-                  </div>
+      <div className="about-points">
+        <div className="about-point about-panel">
+          <h3>I value structure</h3>
+          <p>
+            Clean separation of concerns, maintainable code, and systems that can grow without
+            becoming messy.
+          </p>
+        </div>
 
-                  <div className="about-point about-panel">
-                    <h3>Real deployment</h3>
-                    <p>
-                      Projects should be usable, testable, and actually running in real
-                      environments.
-                    </p>
-                  </div>
+        <div className="about-point about-panel">
+          <h3>I build for real use</h3>
+          <p>
+            I care about deployment, usability, and features that make sense in practice, not just
+            on paper.
+          </p>
+        </div>
 
-                  <div className="about-point about-panel">
-                    <h3>Practical problem solving</h3>
-                    <p>Useful features, realistic decisions, and solutions that make sense.</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </SectionReveal>
+        <div className="about-point about-panel">
+          <h3>I like solving practical problems</h3>
+          <p>
+            The most interesting projects to me are the ones that connect technology to real user
+            needs or business value.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</SectionReveal>
 
           <SectionReveal>
             <section className="contact-section" id="contact">
