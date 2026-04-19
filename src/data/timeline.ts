@@ -1,50 +1,48 @@
 export const timelineItems = [
   {
-    period: '2024 - Present',
-    title: 'Software Engineering Student',
-    subtitle: 'Fontys ICT',
+    period: '2024',
+    title: 'Started Fontys ICT',
+    subtitle: 'Software Engineering Student',
     description:
-      'Developing practical software engineering skills across full-stack development, architecture, cloud, and deployment.',
+      'Started my Software Engineering journey at Fontys, building a foundation in full-stack development, teamwork, and practical software projects.',
     highlights: [
-      'Worked with React, TypeScript, ASP.NET, C#, SQL, and cloud tooling',
-      'Built applications with maintainable structure and realistic features',
-      'Focused on turning academic work into usable software',
+      'Began working with modern web technologies and databases',
+      'Developed interest in full-stack engineering and real-world applications',
     ],
   },
   {
-    period: '2025',
-    title: 'MealPulse',
-    subtitle: 'Full-Stack Nutrition Platform',
+    period: 'Semester 2',
+    title: 'Software Engineering',
+    subtitle: 'Full-Stack Foundations',
     description:
-      'Built and improved a full-stack application focused on nutrition tracking, user flows, backend structure, and real-world usability.',
+      'Focused on software engineering fundamentals through personal and group-based projects.',
     highlights: [
-      'Worked on frontend, backend, architecture, and validation',
-      'Improved UX, profile flows, food logging, and dashboard features',
-      'Focused on scalable structure and practical implementation',
+      'Built MealPulse, a nutrition tracking web app',
+      'Worked on NERA, an event management platform for CGI, as team leader',
     ],
   },
   {
-    period: '2025',
-    title: 'NERA',
-    subtitle: 'Event Management Platform',
+    period: 'Semester 3',
+    title: 'Full-Stack Development',
+    subtitle: 'Projects with Broader Scope',
     description:
-      'Contributed to a larger event system with real user flows, payments, registrations, and service-based project structure.',
+      'Worked on more advanced full-stack systems with modern frontend and backend frameworks.',
     highlights: [
-      'Worked on event features, registration logic, and project organisation',
-      'Improved structure through services and separation of concerns',
-      'Handled practical software problems instead of just interface work',
+      'Built HousingHelper with scraping, notifications, and map-based browsing',
+      'Worked on BAS Insights with BAS World as Scrum Master',
     ],
   },
   {
-    period: 'Ongoing',
-    title: 'Cloud, Deployment & AI Direction',
-    subtitle: 'Infrastructure and Intelligent Systems',
+    period: 'Semester 4',
+    title: 'AI, Machine Learning & Data',
+    subtitle: 'Current Focus',
     description:
-      'Expanding deeper into deployment, automation, cloud platforms, and AI-related engineering work.',
+      'Currently focusing on AI, machine learning, and data-driven development while continuing to build both individual and group projects.',
     highlights: [
-      'Worked with Azure, AWS, Raspberry Pi, and Cloudflare',
-      'Interested in CI/CD, deployment pipelines, and cloud-based delivery',
-      'Building toward stronger AI, machine learning, and data-focused systems',
+      'Building this portfolio website',
+      'Working on new AI and data-related projects',
+      'Participated in BrabantHack26',
+      'Looking for an internship for semester 5',
     ],
   },
 ]
