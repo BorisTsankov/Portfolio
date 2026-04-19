@@ -38,6 +38,7 @@ function Home() {
               <div className="hero-highlights">
                 <span>React / TypeScript</span>
                 <span>ASP.NET / C#</span>
+                <span>Spring Boot / Java</span>
                 <span>AI / ML</span>
                 <span>Azure / AWS / CI-CD</span>
               </div>
