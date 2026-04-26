@@ -26,6 +26,11 @@ function Home() {
     <>
       {!introDone && (
   <div className="intro-screen">
+    <div className="intro-corner intro-corner-top-left" />
+    <div className="intro-corner intro-corner-top-right" />
+    <div className="intro-corner intro-corner-bottom-left" />
+    <div className="intro-corner intro-corner-bottom-right" />
+
     <div className="intro-content">
       <p className="intro-eyebrow">
         Software Engineering Student · Full-Stack Developer · AI / ML Focus
@@ -37,7 +42,12 @@ function Home() {
       </h1>
 
       <div className="intro-line" />
-      <p className="intro-loader">Initializing portfolio</p>
+
+      <div className="intro-progress">
+        <span />
+      </div>
+
+      <p className="intro-loader">Building interface</p>
     </div>
   </div>
 )}
