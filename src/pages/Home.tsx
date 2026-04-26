@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { stats } from '../data/stats'
 import { liveProjects, featuredProjects } from '../data/projects'
 import ProjectCard from '../components/ProjectCard'
@@ -11,207 +12,229 @@ import LeadershipSection from '../components/LeadershipSection'
 const allProjects = [...liveProjects, ...featuredProjects]
 
 function Home() {
+  const [introDone, setIntroDone] = useState(false)
+
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    setIntroDone(true)
+  }, 3900)
+
+  return () => clearTimeout(timer)
+}, [])
+
   return (
     <>
-      <Navbar />
-
-      <main className="portfolio" id="top">
-        <div className="page-shell">
-         <section className="hero-section">
-  <div className="hero-top">
-    <p className="eyebrow">Software Engineering Student · Full-Stack Developer · AI / ML Focus</p>
-
-    <h1 className="hero-title hero-title-centered">
-      Clean systems. <span>Real software.</span>
-    </h1>
-  </div>
-
-  <div className="hero-main">
-    <div className="hero-copy">
-      <div className="hero-meta">
-        <span>Fontys ICT · Semester 4</span>
-        <span>Looking for internship</span>
-        <span>Proxy board member</span>
-      </div>
-
-      <p className="hero-text hero-text-compact">
-        I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on full-stack
-        development, AI, cloud, and practical deployment. I build software with strong structure,
-        realistic implementation, and long-term maintainability in mind.
+      {!introDone && (
+  <div className="intro-screen">
+    <div className="intro-content">
+      <p className="intro-eyebrow">
+        Software Engineering Student · Full-Stack Developer · AI / ML Focus
       </p>
 
-      <div className="hero-status">
-        <span className="status-dot" />
-        Available for internships / junior roles
-      </div>
+      <h1 className="intro-title" data-text="Clean systems. Real software.">
+        <span className="intro-title-main">Clean systems.</span>
+        <span className="intro-title-sub">Real software.</span>
+      </h1>
 
-      <div className="hero-highlights">
-        <span>React / TypeScript</span>
-        <span>ASP.NET / C#</span>
-        <span>Spring Boot / Java</span>
-        <span>AI / ML</span>
-        <span>Azure / AWS / CI-CD</span>
-      </div>
-
-      <div className="hero-actions">
-        <a href="#projects" className="btn btn-primary">
-          View Projects
-        </a>
-        <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-          Download CV
-        </a>
-      </div>
-    </div>
-
-    <div className="hero-media">
-      <div className="hero-image-shell">
-        <div className="hero-image-ring" />
-        <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
-      </div>
+      <div className="intro-line" />
+      <p className="intro-loader">Initializing portfolio</p>
     </div>
   </div>
-</section>
+)}
 
-          <SectionReveal>
-            <section className="stats-section">
-              <div className="info-strip">
-                {stats.map((stat) => (
-                  <div key={stat.label} className="info-strip-item">
-                    <span className="info-strip-value">{stat.value}</span>
-                    <span className="info-strip-label">{stat.label}</span>
+      <div className={introDone ? 'site-visible' : 'site-hidden'}>
+        <Navbar />
+
+        <main className="portfolio" id="top">
+          <div className="page-shell">
+            <section className="hero-section">
+              <div className="hero-main">
+                <div className="hero-copy">
+                  <div className="hero-meta">
+                    <span>Fontys ICT · Semester 4</span>
+                    <span>Looking for internship</span>
+                    <span>Proxy board member</span>
                   </div>
-                ))}
-              </div>
-            </section>
-          </SectionReveal>
 
-          <SectionReveal>
-            <section className="projects-section" id="projects">
-              <div className="section-heading projects-heading">
-                <p className="section-label">Projects</p>
-                <h2>Selected work</h2>
-                <p>
-                  Projects that reflect how I design, build, and ship software across web
-                  development, cloud infrastructure, and AI-related systems.
-                </p>
-              </div>
+                  <p className="hero-text hero-text-compact">
+                    I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on
+                    full-stack development, AI, cloud, and practical deployment. I build software
+                    with strong structure, realistic implementation, and long-term maintainability
+                    in mind.
+                  </p>
 
-              <div className="projects-grid">
-                {allProjects.map((project, index) => (
-                  <ProjectCard key={project.title} project={project} index={index + 1} />
-                ))}
-              </div>
-            </section>
-          </SectionReveal>
+                  <div className="hero-status">
+                    <span className="status-dot" />
+                    Available for internships / junior roles
+                  </div>
 
-          <SectionReveal>
-            <StackSection />
-          </SectionReveal>
+                  <div className="hero-highlights">
+                    <span>React / TypeScript</span>
+                    <span>ASP.NET / C#</span>
+                    <span>Spring Boot / Java</span>
+                    <span>AI / ML</span>
+                    <span>Azure / AWS / CI-CD</span>
+                  </div>
 
-          <SectionReveal>
-            <TimelineSection />
-          </SectionReveal>
+                  <div className="hero-actions">
+                    <a href="#projects" className="btn btn-primary">
+                      View Projects
+                    </a>
+                    <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+                      Download CV
+                    </a>
+                  </div>
+                </div>
 
-          <SectionReveal>
-            <LeadershipSection />
-          </SectionReveal>
-
-          <SectionReveal>
-  <section className="about-section" id="about">
-    <div className="section-heading">
-      <p className="section-label">About</p>
-      <h2>How I approach software</h2>
-    </div>
-
-    <div className="about-grid">
-      <div className="about-panel about-text">
-        <p>
-          I’m a Software Engineering student at Fontys who enjoys building systems that feel real,
-          complete, and useful. What interests me most is the combination of full-stack
-          development, AI, and practical deployment.
-        </p>
-        <p>
-          I like software that is not just functional, but also structured well, easy to use, and
-          built with realistic decisions in mind. I care about maintainability, clarity, and making
-          things work properly outside of a demo environment.
-        </p>
-        <p>
-          Right now, I’m especially interested in growing further in software engineering, AI, and
-          data-driven systems through projects, collaboration, and an internship where I can keep
-          learning in a real professional setting.
-        </p>
-      </div>
-
-      <div className="about-points">
-        <div className="about-point about-panel">
-          <h3>I value structure</h3>
-          <p>
-            Clean separation of concerns, maintainable code, and systems that can grow without
-            becoming messy.
-          </p>
-        </div>
-
-        <div className="about-point about-panel">
-          <h3>I build for real use</h3>
-          <p>
-            I care about deployment, usability, and features that make sense in practice, not just
-            on paper.
-          </p>
-        </div>
-
-        <div className="about-point about-panel">
-          <h3>I like solving practical problems</h3>
-          <p>
-            The most interesting projects to me are the ones that connect technology to real user
-            needs or business value.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</SectionReveal>
-
-          <SectionReveal>
-            <section className="contact-section" id="contact">
-              <div className="section-heading">
-                <p className="section-label">Contact</p>
-                <h2>Let’s build something good</h2>
-                <p>
-                  I’m open to internships, junior opportunities, and software or AI-related work
-                  where I can contribute and keep growing.
-                </p>
-              </div>
-
-              <div className="contact-card">
-                <p className="contact-lead">
-                  Have an opportunity, collaboration, or role that fits? Reach out and let’s talk.
-                </p>
-
-                <div className="contact-links contact-links-large">
-                  <a href="mailto:tsankov.b@gmail.com">Email</a>
-                  <a
-                    href="https://www.linkedin.com/in/YOUR-LINKEDIN"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    LinkedIn
-                  </a>
-                  <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
-                    GitHub
-                  </a>
-                  <a href="/cv.pdf" target="_blank" rel="noreferrer">
-                    CV
-                  </a>
+                <div className="hero-media">
+                  <div className="hero-image-shell">
+                    <div className="hero-image-ring" />
+                    <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
+                  </div>
                 </div>
               </div>
             </section>
-          </SectionReveal>
 
-          <footer className="site-footer">
-            <p>© 2026 Boris Tsankov. Built with React and TypeScript.</p>
-          </footer>
-        </div>
-      </main>
+            <SectionReveal>
+              <section className="stats-section">
+                <div className="info-strip">
+                  {stats.map((stat) => (
+                    <div key={stat.label} className="info-strip-item">
+                      <span className="info-strip-value">{stat.value}</span>
+                      <span className="info-strip-label">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            </SectionReveal>
+
+            <SectionReveal>
+              <section className="projects-section" id="projects">
+                <div className="section-heading projects-heading">
+                  <p className="section-label">Projects</p>
+                  <h2>Selected work</h2>
+                  <p>
+                    Projects that reflect how I design, build, and ship software across web
+                    development, cloud infrastructure, and AI-related systems.
+                  </p>
+                </div>
+
+                <div className="projects-grid">
+                  {allProjects.map((project, index) => (
+                    <ProjectCard key={project.title} project={project} index={index + 1} />
+                  ))}
+                </div>
+              </section>
+            </SectionReveal>
+
+            <SectionReveal>
+              <StackSection />
+            </SectionReveal>
+
+            <SectionReveal>
+              <TimelineSection />
+            </SectionReveal>
+
+            <SectionReveal>
+              <LeadershipSection />
+            </SectionReveal>
+
+            <SectionReveal>
+              <section className="about-section" id="about">
+                <div className="section-heading">
+                  <p className="section-label">About</p>
+                  <h2>How I approach software</h2>
+                </div>
+
+                <div className="about-grid">
+                  <div className="about-panel about-text">
+                    <p>
+                      I’m a Software Engineering student at Fontys who enjoys building systems that
+                      feel real, complete, and useful. What interests me most is the combination of
+                      full-stack development, AI, and practical deployment.
+                    </p>
+                    <p>
+                      I like software that is not just functional, but also structured well, easy to
+                      use, and built with realistic decisions in mind.
+                    </p>
+                    <p>
+                      Right now, I’m especially interested in growing further in software
+                      engineering, AI, and data-driven systems through projects, collaboration, and
+                      an internship where I can keep learning in a real professional setting.
+                    </p>
+                  </div>
+
+                  <div className="about-points">
+                    <div className="about-point about-panel">
+                      <h3>I value structure</h3>
+                      <p>
+                        Clean separation of concerns, maintainable code, and systems that can grow
+                        without becoming messy.
+                      </p>
+                    </div>
+
+                    <div className="about-point about-panel">
+                      <h3>I build for real use</h3>
+                      <p>
+                        I care about deployment, usability, and features that make sense in
+                        practice, not just on paper.
+                      </p>
+                    </div>
+
+                    <div className="about-point about-panel">
+                      <h3>I like solving practical problems</h3>
+                      <p>
+                        The most interesting projects to me are the ones that connect technology to
+                        real user needs or business value.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </SectionReveal>
+
+            <SectionReveal>
+              <section className="contact-section" id="contact">
+                <div className="section-heading">
+                  <p className="section-label">Contact</p>
+                  <h2>Let’s build something good</h2>
+                  <p>
+                    I’m open to internships, junior opportunities, and software or AI-related work
+                    where I can contribute and keep growing.
+                  </p>
+                </div>
+
+                <div className="contact-card">
+                  <p className="contact-lead">
+                    Have an opportunity, collaboration, or role that fits? Reach out and let’s talk.
+                  </p>
+
+                  <div className="contact-links contact-links-large">
+                    <a href="mailto:tsankov.b@gmail.com">Email</a>
+                    <a
+                      href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      LinkedIn
+                    </a>
+                    <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
+                      GitHub
+                    </a>
+                    <a href="/cv.pdf" target="_blank" rel="noreferrer">
+                      CV
+                    </a>
+                  </div>
+                </div>
+              </section>
+            </SectionReveal>
+
+            <footer className="site-footer">
+              <p>© 2026 Boris Tsankov. Built with React and TypeScript.</p>
+            </footer>
+          </div>
+        </main>
+      </div>
     </>
   )
 }
