@@ -217,40 +217,85 @@ useEffect(() => {
             </SectionReveal>
 
             <SectionReveal>
-              <section className="contact-section" id="contact">
-                <div className="section-heading">
-                  <p className="section-label">Contact</p>
-                  <h2>Let’s build something good</h2>
-                  <p>
-                    I’m open to internships, junior opportunities, and software or AI-related work
-                    where I can contribute and keep growing.
-                  </p>
-                </div>
+  <section className="contact-section" id="contact">
+    <div className="section-heading contact-heading-wide">
+      <p className="section-label">Contact</p>
+      <h2>Let’s build something good</h2>
+      <p>
+        I’m open to internships, junior opportunities, and software or AI-related work
+        where I can contribute and keep growing.
+      </p>
+    </div>
 
-                <div className="contact-card">
-                  <p className="contact-lead">
-                    Have an opportunity, collaboration, or role that fits? Reach out and let’s talk.
-                  </p>
+    <div className="contact-showcase">
+      <div className="contact-intro-box">
+        <div className="contact-availability">
+          <span className="status-dot" />
+          <span>Available for</span>
+        </div>
 
-                  <div className="contact-links contact-links-large">
-                    <a href="mailto:tsankov.b@gmail.com">Email</a>
-                    <a
-                      href="https://www.linkedin.com/in/YOUR-LINKEDIN"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      LinkedIn
-                    </a>
-                    <a href="https://github.com/YOUR-GITHUB" target="_blank" rel="noreferrer">
-                      GitHub
-                    </a>
-                    <a href="/cv.pdf" target="_blank" rel="noreferrer">
-                      CV
-                    </a>
-                  </div>
-                </div>
-              </section>
-            </SectionReveal>
+        <h3>Internships / junior roles</h3>
+
+        <div className="contact-divider" />
+
+        <p>
+          Have an opportunity, collaboration, or role that fits?
+          Reach out and let’s talk.
+        </p>
+      </div>
+
+      <div className="contact-card-grid">
+        <a href="mailto:tsankov.b@gmail.com" className="contact-mini-card">
+          <span className="contact-corner" />
+          <span className="contact-icon">✉</span>
+          <strong>Email</strong>
+          <p>Send me an email directly.</p>
+          <span className="contact-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-mini-card"
+        >
+          <span className="contact-corner" />
+          <span className="contact-icon">in</span>
+          <strong>LinkedIn</strong>
+          <p>Let’s connect on LinkedIn.</p>
+          <span className="contact-arrow">↗</span>
+        </a>
+
+        <a
+          href="https://github.com/YOUR-GITHUB"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-mini-card"
+        >
+          <span className="contact-corner" />
+          <span className="contact-icon">GH</span>
+          <strong>GitHub</strong>
+          <p>Check out my code and projects.</p>
+          <span className="contact-arrow">↗</span>
+        </a>
+
+        <a href="/cv.pdf" target="_blank" rel="noreferrer" className="contact-mini-card">
+          <span className="contact-corner" />
+          <span className="contact-icon">▤</span>
+          <strong>CV</strong>
+          <p>Download my CV PDF.</p>
+          <span className="contact-arrow">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div className="contact-response-strip">
+      <span />
+      <p>I usually respond within 24-48 hours.</p>
+      <span />
+    </div>
+  </section>
+</SectionReveal>
 
             <footer className="site-footer">
               <p>© 2026 Boris Tsankov. Built with React and TypeScript.</p>
