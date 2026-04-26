@@ -14,6 +14,19 @@ const allProjects = [...liveProjects, ...featuredProjects]
 function Home() {
   const [introDone, setIntroDone] = useState(false)
 
+
+   type Theme = 'dark' | 'light' | 'terminal' | 'purple'
+
+const [theme, setTheme] = useState<Theme>(() => {
+  return (localStorage.getItem('theme') as Theme) || 'dark'
+})
+
+useEffect(() => {
+  document.documentElement.setAttribute('data-theme', theme)
+  localStorage.setItem('theme', theme)
+}, [theme])
+
+  
   useEffect(() => {
   const timer = setTimeout(() => {
     setIntroDone(true)
@@ -53,7 +66,7 @@ function Home() {
 )}
 
       <div className={introDone ? 'site-visible' : 'site-hidden'}>
-        <Navbar />
+        <Navbar theme={theme} setTheme={setTheme} />
 
         <main className="portfolio" id="top">
           <div className="page-shell">
