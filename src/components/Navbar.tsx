@@ -42,7 +42,7 @@ const nextTheme = () => {
   {theme}
 </button>
 
-          <a href="/cv.pdf" target="_blank" rel="noreferrer" className="nav-cta">
+          <a href="/BorisTsankov.pdf" target="_blank" rel="noreferrer" className="nav-cta">
             CV
           </a>
         </div>

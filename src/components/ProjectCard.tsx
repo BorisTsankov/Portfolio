@@ -1,4 +1,7 @@
 import type { Project } from '../types'
+import { FiExternalLink } from 'react-icons/fi'
+import { FaGithub } from 'react-icons/fa'
+import { techIcons } from '../data/techIcons'
 
 type ProjectCardProps = {
   project: Project
@@ -22,11 +25,20 @@ function ProjectCard({ project, index }: ProjectCardProps) {
       </div>
 
       <div className="stack-list">
-        {project.stack.map((item) => (
-          <span key={item} className="stack-pill">
-            {item}
-          </span>
-        ))}
+        {project.stack.map((item) => {
+          const Icon = techIcons[item]
+
+          return (
+            <span key={item} className="stack-pill">
+              {Icon && (
+                <span className="stack-pill-icon" aria-hidden="true">
+                  <Icon />
+                </span>
+              )}
+              {item}
+            </span>
+          )
+        })}
       </div>
 
       <div className="project-card-footer">
@@ -39,7 +51,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noreferrer"
                 className="project-action-btn project-action-primary"
               >
-                Live Demo <span aria-hidden="true">↗</span>
+                Live Demo
+                <span className="project-action-icon" aria-hidden="true">
+                  <FiExternalLink />
+                </span>
               </a>
             )}
 
@@ -50,7 +65,10 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                 rel="noreferrer"
                 className="project-action-btn project-action-secondary"
               >
-                GitHub <span aria-hidden="true">↗</span>
+                GitHub
+                <span className="project-action-icon" aria-hidden="true">
+                  <FaGithub />
+                </span>
               </a>
             )}
           </div>

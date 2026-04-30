@@ -8,6 +8,8 @@ import StackSection from '../components/StackSection'
 import TimelineSection from '../components/TimelineSection'
 import profilePic from '../assets/ProfilePic.JPG'
 import LeadershipSection from '../components/LeadershipSection'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
+import { FiExternalLink, FiMail, FiFileText } from 'react-icons/fi'
 
 const allProjects = [...liveProjects, ...featuredProjects]
 
@@ -80,11 +82,12 @@ useEffect(() => {
                   </div>
 
                   <p className="hero-text hero-text-compact">
-                    I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on
-                    full-stack development, AI, cloud, and practical deployment. I build software
-                    with strong structure, realistic implementation, and long-term maintainability
-                    in mind.
-                  </p>
+  I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on
+  full-stack web development. I enjoy building complete applications from the
+  frontend interface to the backend logic, database, authentication, deployment,
+  and maintainable architecture. I also have a strong interest in AI, cloud, and
+  practical software systems.
+</p>
 
                   <div className="hero-status">
                     <span className="status-dot" />
@@ -103,8 +106,8 @@ useEffect(() => {
                     <a href="#projects" className="btn btn-primary">
                       View Projects
                     </a>
-                    <a href="/cv.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-                      Download CV
+                    <a href="/BorisTsankov.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
+                      Open CV
                     </a>
                   </div>
                 </div>
@@ -136,10 +139,9 @@ useEffect(() => {
                 <div className="section-heading projects-heading">
                   <p className="section-label">Projects</p>
                   <h2>Selected work</h2>
-                  <p>
-                    Projects that reflect how I design, build, and ship software across web
-                    development, cloud infrastructure, and AI-related systems.
-                  </p>
+                  Projects that show how I design, build, and ship full-stack applications with
+frontend interfaces, backend services, databases, authentication, deployment,
+and clean architecture.
                 </div>
 
                 <div className="projects-grid">
@@ -172,18 +174,20 @@ useEffect(() => {
                 <div className="about-grid">
                   <div className="about-panel about-text">
                     <p>
-                      I’m a Software Engineering student at Fontys who enjoys building systems that
-                      feel real, complete, and useful. What interests me most is the combination of
-                      full-stack development, AI, and practical deployment.
+                      I’m a Software Engineering student at Fontys who enjoys building full-stack
+applications that feel real, complete, and useful. I like working on both the
+frontend and backend, connecting user interfaces with business logic, databases,
+APIs, authentication, and deployment.
                     </p>
                     <p>
                       I like software that is not just functional, but also structured well, easy to
                       use, and built with realistic decisions in mind.
                     </p>
                     <p>
-                      Right now, I’m especially interested in growing further in software
-                      engineering, AI, and data-driven systems through projects, collaboration, and
-                      an internship where I can keep learning in a real professional setting.
+                     Right now, I’m especially interested in growing further as a full-stack
+developer through projects, collaboration, and an internship where I can keep
+learning in a real professional setting. I also want to keep exploring AI,
+cloud, and data-driven systems as part of practical software development.
                     </p>
                   </div>
 
@@ -222,8 +226,9 @@ useEffect(() => {
       <p className="section-label">Contact</p>
       <h2>Let’s build something good</h2>
       <p>
-        I’m open to internships, junior opportunities, and software or AI-related work
-        where I can contribute and keep growing.
+       I’m open to full-stack internships, junior developer opportunities, and software
+work where I can contribute across frontend, backend, databases, and deployment
+while continuing to grow.
       </p>
     </div>
 
@@ -247,44 +252,60 @@ useEffect(() => {
       <div className="contact-card-grid">
         <a href="mailto:tsankov.b@gmail.com" className="contact-mini-card">
           <span className="contact-corner" />
-          <span className="contact-icon">✉</span>
+          <span className="contact-icon">
+  <FiMail />
+</span>
           <strong>Email</strong>
           <p>Send me an email directly.</p>
-          <span className="contact-arrow">↗</span>
+          <span className="contact-arrow" aria-hidden="true">
+  <FiExternalLink />
+</span>
         </a>
 
         <a
-          href="https://www.linkedin.com/in/YOUR-LINKEDIN"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-mini-card"
-        >
-          <span className="contact-corner" />
-          <span className="contact-icon">in</span>
-          <strong>LinkedIn</strong>
-          <p>Let’s connect on LinkedIn.</p>
-          <span className="contact-arrow">↗</span>
-        </a>
+  href="https://www.linkedin.com/in/boris-ts/"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-mini-card"
+>
+  <span className="contact-corner" />
+  <span className="contact-icon">
+    <FaLinkedinIn />
+  </span>
+  <strong>LinkedIn</strong>
+  <p>Let’s connect on LinkedIn.</p>
+  <span className="contact-arrow" aria-hidden="true">
+  <FiExternalLink />
+</span>
+</a>
 
         <a
-          href="https://github.com/YOUR-GITHUB"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-mini-card"
-        >
-          <span className="contact-corner" />
-          <span className="contact-icon">GH</span>
-          <strong>GitHub</strong>
-          <p>Check out my code and projects.</p>
-          <span className="contact-arrow">↗</span>
-        </a>
+  href="https://github.com/BorisTsankov"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-mini-card"
+>
+  <span className="contact-corner" />
+  <span className="contact-icon">
+    <FaGithub />
+  </span>
+  <strong>GitHub</strong>
+  <p>Check out my code and projects.</p>
+  <span className="contact-arrow" aria-hidden="true">
+  <FiExternalLink />
+</span>
+</a>
 
-        <a href="/cv.pdf" target="_blank" rel="noreferrer" className="contact-mini-card">
+        <a href="/BorisTsankov.pdf" target="_blank" rel="noreferrer" className="contact-mini-card">
           <span className="contact-corner" />
-          <span className="contact-icon">▤</span>
+         <span className="contact-icon">
+  <FiFileText />
+</span>
           <strong>CV</strong>
-          <p>Download my CV PDF.</p>
-          <span className="contact-arrow">↗</span>
+          <p>Preview my CV PDF.</p>
+          <span className="contact-arrow" aria-hidden="true">
+  <FiExternalLink />
+</span>
         </a>
       </div>
     </div>
