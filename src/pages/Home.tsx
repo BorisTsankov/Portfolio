@@ -6,116 +6,113 @@ import Navbar from '../components/Navbar'
 import SectionReveal from '../components/SectionReveal'
 import StackSection from '../components/StackSection'
 import TimelineSection from '../components/TimelineSection'
-import profilePic from '../assets/ProfilePic.JPG'
 import LeadershipSection from '../components/LeadershipSection'
+import profilePic from '../assets/ProfilePic.JPG'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa'
 import { FiExternalLink, FiMail, FiFileText } from 'react-icons/fi'
 
 const allProjects = [...liveProjects, ...featuredProjects]
 
+type Theme = 'dark' | 'light' | 'terminal' | 'purple'
+
 function Home() {
   const [introDone, setIntroDone] = useState(false)
 
+  const [theme, setTheme] = useState<Theme>(() => {
+    return (localStorage.getItem('theme') as Theme) || 'dark'
+  })
 
-   type Theme = 'dark' | 'light' | 'terminal' | 'purple'
-
-const [theme, setTheme] = useState<Theme>(() => {
-  return (localStorage.getItem('theme') as Theme) || 'dark'
-})
-
-useEffect(() => {
-  document.documentElement.setAttribute('data-theme', theme)
-  localStorage.setItem('theme', theme)
-}, [theme])
-
-  
   useEffect(() => {
-  const timer = setTimeout(() => {
-    setIntroDone(true)
-  }, 3900)
+    document.documentElement.setAttribute('data-theme', theme)
+    localStorage.setItem('theme', theme)
+  }, [theme])
 
-  return () => clearTimeout(timer)
-}, [])
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIntroDone(true)
+    }, 3900)
+
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <>
       {!introDone && (
-  <div className="intro-screen">
-    <div className="intro-corner intro-corner-top-left" />
-    <div className="intro-corner intro-corner-top-right" />
-    <div className="intro-corner intro-corner-bottom-left" />
-    <div className="intro-corner intro-corner-bottom-right" />
+        <div className="intro-screen">
+          <div className="intro-corner intro-corner-top-left" />
+          <div className="intro-corner intro-corner-top-right" />
+          <div className="intro-corner intro-corner-bottom-left" />
+          <div className="intro-corner intro-corner-bottom-right" />
 
-    <div className="intro-content">
-      <p className="intro-eyebrow">
-        Software Engineering Student · Full-Stack Developer · AI / ML Focus
-      </p>
+          <div className="intro-content">
+            <p className="intro-eyebrow">
+              Software Engineering Student · Full-Stack Developer · AI / ML Focus
+            </p>
 
-      <h1 className="intro-title" data-text="Clean systems. Real software.">
-        <span className="intro-title-main">Clean systems.</span>
-        <span className="intro-title-sub">Real software.</span>
-      </h1>
+            <h1 className="intro-title" data-text="Clean systems. Real software.">
+              <span className="intro-title-main">Clean systems.</span>
+              <span className="intro-title-sub">Real software.</span>
+            </h1>
 
-      <div className="intro-line" />
+            <div className="intro-line" />
 
-      <div className="intro-progress">
-        <span />
-      </div>
+            <div className="intro-progress">
+              <span />
+            </div>
 
-      <p className="intro-loader">Building interface</p>
-    </div>
-  </div>
-)}
+            <p className="intro-loader">Building interface</p>
+          </div>
+        </div>
+      )}
 
       <div className={introDone ? 'site-visible' : 'site-hidden'}>
         <Navbar theme={theme} setTheme={setTheme} />
 
         <main className="portfolio" id="top">
           <div className="page-shell">
-            <section className="hero-section">
-              <div className="hero-main">
-                <div className="hero-copy">
-                  <div className="hero-meta">
-                    <span>Fontys ICT · Semester 4</span>
-                    <span>Looking for internship</span>
-                    <span>Proxy board member</span>
-                  </div>
-
-                  <p className="hero-text hero-text-compact">
-  I’m Boris Tsankov, a Software Engineering student at Fontys ICT focused on
-  full-stack web development. I enjoy building complete applications from the
-  frontend interface to the backend logic, database, authentication, deployment,
-  and maintainable architecture. I also have a strong interest in AI, cloud, and
-  practical software systems.
-</p>
-
-                  <div className="hero-status">
-                    <span className="status-dot" />
-                    Available for internships / junior roles
-                  </div>
-
-                  <div className="hero-highlights">
-                    <span>React / TypeScript</span>
-                    <span>ASP.NET / C#</span>
-                    <span>Spring Boot / Java</span>
-                    <span>AI / ML</span>
-                    <span>Azure / AWS / CI-CD</span>
-                  </div>
-
-                  <div className="hero-actions">
-                    <a href="#projects" className="btn btn-primary">
-                      View Projects
-                    </a>
-                    <a href="/BorisTsankov.pdf" target="_blank" rel="noreferrer" className="btn btn-secondary">
-                      Open CV
-                    </a>
-                  </div>
+            <section className="poster-hero">
+              <div className="poster-frame">
+                <div className="poster-image-wrap">
+                  <img src={profilePic} alt="Boris Tsankov" className="poster-image" />
                 </div>
 
-                <div className="hero-media">
-                  <div className="hero-image-shell">
-                    <div className="hero-image-ring" />
-                    <img src={profilePic} alt="Boris Tsankov" className="hero-image" />
+                <div className="poster-overlay" />
+
+                <div className="poster-content">
+                  <div className="poster-copy">
+                    <p className="poster-label">Software Engineering Student</p>
+
+                    <h1 className="poster-title">
+                      <span>Boris</span>
+                      <span>Tsankov</span>
+                    </h1>
+
+                    <p className="poster-subtitle">Full-stack developer in progress.</p>
+
+                    <p className="poster-text">
+                      Software Engineering student focused on full-stack web development,
+                      clean architecture, and practical software systems.
+                    </p>
+
+                    <div className="poster-actions">
+                      <a href="#projects" className="btn btn-primary">
+                        View Projects
+                      </a>
+
+                      <a
+                        href="/BorisTsankov.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn-secondary"
+                      >
+                        Open CV
+                      </a>
+                    </div>
+
+                    <p className="poster-availability-line">
+                      <span className="status-dot" />
+                      Open to internships
+                    </p>
                   </div>
                 </div>
               </div>
@@ -139,9 +136,11 @@ useEffect(() => {
                 <div className="section-heading projects-heading">
                   <p className="section-label">Projects</p>
                   <h2>Selected work</h2>
-                  Projects that show how I design, build, and ship full-stack applications with
-frontend interfaces, backend services, databases, authentication, deployment,
-and clean architecture.
+                  <p>
+                    Projects that show how I design, build, and ship full-stack
+                    applications with frontend interfaces, backend services, databases,
+                    authentication, deployment, and clean architecture.
+                  </p>
                 </div>
 
                 <div className="projects-grid">
@@ -174,20 +173,23 @@ and clean architecture.
                 <div className="about-grid">
                   <div className="about-panel about-text">
                     <p>
-                      I’m a Software Engineering student at Fontys who enjoys building full-stack
-applications that feel real, complete, and useful. I like working on both the
-frontend and backend, connecting user interfaces with business logic, databases,
-APIs, authentication, and deployment.
+                      I’m a Software Engineering student at Fontys who enjoys building
+                      full-stack applications that feel real, complete, and useful. I like
+                      working on both the frontend and backend, connecting user interfaces
+                      with business logic, databases, APIs, authentication, and deployment.
                     </p>
+
                     <p>
-                      I like software that is not just functional, but also structured well, easy to
-                      use, and built with realistic decisions in mind.
+                      I like software that is not just functional, but also structured
+                      well, easy to use, and built with realistic decisions in mind.
                     </p>
+
                     <p>
-                     Right now, I’m especially interested in growing further as a full-stack
-developer through projects, collaboration, and an internship where I can keep
-learning in a real professional setting. I also want to keep exploring AI,
-cloud, and data-driven systems as part of practical software development.
+                      Right now, I’m especially interested in growing further as a
+                      full-stack developer through projects, collaboration, and an
+                      internship where I can keep learning in a real professional setting.
+                      I also want to keep exploring AI, cloud, and data-driven systems as
+                      part of practical software development.
                     </p>
                   </div>
 
@@ -195,8 +197,8 @@ cloud, and data-driven systems as part of practical software development.
                     <div className="about-point about-panel">
                       <h3>I value structure</h3>
                       <p>
-                        Clean separation of concerns, maintainable code, and systems that can grow
-                        without becoming messy.
+                        Clean separation of concerns, maintainable code, and systems that
+                        can grow without becoming messy.
                       </p>
                     </div>
 
@@ -211,8 +213,8 @@ cloud, and data-driven systems as part of practical software development.
                     <div className="about-point about-panel">
                       <h3>I like solving practical problems</h3>
                       <p>
-                        The most interesting projects to me are the ones that connect technology to
-                        real user needs or business value.
+                        The most interesting projects to me are the ones that connect
+                        technology to real user needs or business value.
                       </p>
                     </div>
                   </div>
@@ -221,102 +223,107 @@ cloud, and data-driven systems as part of practical software development.
             </SectionReveal>
 
             <SectionReveal>
-  <section className="contact-section" id="contact">
-    <div className="section-heading contact-heading-wide">
-      <p className="section-label">Contact</p>
-      <h2>Let’s build something good</h2>
-      <p>
-       I’m open to full-stack internships, junior developer opportunities, and software
-work where I can contribute across frontend, backend, databases, and deployment
-while continuing to grow.
-      </p>
-    </div>
+              <section className="contact-section" id="contact">
+                <div className="section-heading contact-heading-wide">
+                  <p className="section-label">Contact</p>
+                  <h2>Let’s build something good</h2>
+                  <p>
+                    I’m open to full-stack internships, junior developer opportunities, and
+                    software work where I can contribute across frontend, backend,
+                    databases, and deployment while continuing to grow.
+                  </p>
+                </div>
 
-    <div className="contact-showcase">
-      <div className="contact-intro-box">
-        <div className="contact-availability">
-          <span className="status-dot" />
-          <span>Available for</span>
-        </div>
+                <div className="contact-showcase">
+                  <div className="contact-intro-box">
+                    <div className="contact-availability">
+                      <span className="status-dot" />
+                      <span>Available for</span>
+                    </div>
 
-        <h3>Internships / junior roles</h3>
+                    <h3>Internships / junior roles</h3>
 
-        <div className="contact-divider" />
+                    <div className="contact-divider" />
 
-        <p>
-          Have an opportunity, collaboration, or role that fits?
-          Reach out and let’s talk.
-        </p>
-      </div>
+                    <p>
+                      Have an opportunity, collaboration, or role that fits? Reach out and
+                      let’s talk.
+                    </p>
+                  </div>
 
-      <div className="contact-card-grid">
-        <a href="mailto:tsankov.b@gmail.com" className="contact-mini-card">
-          <span className="contact-corner" />
-          <span className="contact-icon">
-  <FiMail />
-</span>
-          <strong>Email</strong>
-          <p>Send me an email directly.</p>
-          <span className="contact-arrow" aria-hidden="true">
-  <FiExternalLink />
-</span>
-        </a>
+                  <div className="contact-card-grid">
+                    <a href="mailto:boristsankov05@gmail.com" className="contact-mini-card">
+                      <span className="contact-corner" />
+                      <span className="contact-icon">
+                        <FiMail />
+                      </span>
+                      <strong>Email</strong>
+                      <p>Send me an email directly.</p>
+                      <span className="contact-arrow" aria-hidden="true">
+                        <FiExternalLink />
+                      </span>
+                    </a>
 
-        <a
-  href="https://www.linkedin.com/in/boris-ts/"
-  target="_blank"
-  rel="noreferrer"
-  className="contact-mini-card"
->
-  <span className="contact-corner" />
-  <span className="contact-icon">
-    <FaLinkedinIn />
-  </span>
-  <strong>LinkedIn</strong>
-  <p>Let’s connect on LinkedIn.</p>
-  <span className="contact-arrow" aria-hidden="true">
-  <FiExternalLink />
-</span>
-</a>
+                    <a
+                      href="https://www.linkedin.com/in/boris-ts/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="contact-mini-card"
+                    >
+                      <span className="contact-corner" />
+                      <span className="contact-icon">
+                        <FaLinkedinIn />
+                      </span>
+                      <strong>LinkedIn</strong>
+                      <p>Let’s connect on LinkedIn.</p>
+                      <span className="contact-arrow" aria-hidden="true">
+                        <FiExternalLink />
+                      </span>
+                    </a>
 
-        <a
-  href="https://github.com/BorisTsankov"
-  target="_blank"
-  rel="noreferrer"
-  className="contact-mini-card"
->
-  <span className="contact-corner" />
-  <span className="contact-icon">
-    <FaGithub />
-  </span>
-  <strong>GitHub</strong>
-  <p>Check out my code and projects.</p>
-  <span className="contact-arrow" aria-hidden="true">
-  <FiExternalLink />
-</span>
-</a>
+                    <a
+                      href="https://github.com/BorisTsankov"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="contact-mini-card"
+                    >
+                      <span className="contact-corner" />
+                      <span className="contact-icon">
+                        <FaGithub />
+                      </span>
+                      <strong>GitHub</strong>
+                      <p>Check out my code and projects.</p>
+                      <span className="contact-arrow" aria-hidden="true">
+                        <FiExternalLink />
+                      </span>
+                    </a>
 
-        <a href="/BorisTsankov.pdf" target="_blank" rel="noreferrer" className="contact-mini-card">
-          <span className="contact-corner" />
-         <span className="contact-icon">
-  <FiFileText />
-</span>
-          <strong>CV</strong>
-          <p>Preview my CV PDF.</p>
-          <span className="contact-arrow" aria-hidden="true">
-  <FiExternalLink />
-</span>
-        </a>
-      </div>
-    </div>
+                    <a
+                      href="/BorisTsankov.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="contact-mini-card"
+                    >
+                      <span className="contact-corner" />
+                      <span className="contact-icon">
+                        <FiFileText />
+                      </span>
+                      <strong>CV</strong>
+                      <p>Preview my CV PDF.</p>
+                      <span className="contact-arrow" aria-hidden="true">
+                        <FiExternalLink />
+                      </span>
+                    </a>
+                  </div>
+                </div>
 
-    <div className="contact-response-strip">
-      <span />
-      <p>I usually respond within 24-48 hours.</p>
-      <span />
-    </div>
-  </section>
-</SectionReveal>
+                <div className="contact-response-strip">
+                  <span />
+                  <p>I usually respond within 24-48 hours.</p>
+                  <span />
+                </div>
+              </section>
+            </SectionReveal>
 
             <footer className="site-footer">
               <p>© 2026 Boris Tsankov. Built with React and TypeScript.</p>
